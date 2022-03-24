@@ -20,7 +20,7 @@
                       class="text-center"
                     >Ingrese sus datos personales y comience el viaje con nosotros</h5>
                   </v-card-text>
-                  <div class="text-center">
+                  <div class="text-center mb-12">
                     <v-btn rounded outlined dark @click="step++">REGISTRARSE</v-btn>
                   </div>
                 </v-col>
