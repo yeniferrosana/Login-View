@@ -35,10 +35,24 @@
       />
     </v-form>
     <h3 class="text-center mt-4">¿Olvidaste tu contraseña?</h3>
+    <div class="text-center">
+      <v-btn text class="text-capitalize" @click="setData"> ¿Aún no tienes una cuenta?, Registrate</v-btn>
+    </div>
+    <div class="text-center mt-3 mb-12">
+      <v-btn rounded color="blue darken-4" dark>INICIAR SESIÓN</v-btn>
+    </div>
   </v-card-text>
 </template>
 <script>
   export default {
-    name: 'Login'
+    name: 'Login',
+    data: () => ({
+      step: 2
+    }),
+    methods: {
+      setData() {
+        this.$emit("getStep", this.step);
+      }
+    }
   }
 </script>

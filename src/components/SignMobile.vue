@@ -1,8 +1,6 @@
 <template>
   <v-card-text class="mt-12">
-    <h1
-      class="text-center display-2 blue--text text--darken-4"
-    >Inicia Sesión</h1>
+    <h1 class="text-center display-2 blue--text text--darken-4">Crear Cuenta</h1>
     <div class="text-center mt-4">
       <v-btn class="mx-2" fab color="black" outlined>
         <v-icon>fab fa-facebook-f</v-icon>
@@ -17,6 +15,13 @@
     </div>
     <h4 class="text-center mt-4">Asegúrese de su correo electrónico para el registro</h4>
     <v-form>
+      <v-text-field
+        label="Nombre"
+        name="Name"
+        prepend-icon="person"
+        type="text"
+        color="blue darken-4"
+      />
       <v-text-field
         label="Correo Electrónico"
         name="Email"
@@ -34,11 +39,24 @@
         color="blue darken-4"
       />
     </v-form>
-    <h3 class="text-center mt-4">¿Olvidaste tu contraseña?</h3>
+    <div class="text-center">
+      <v-btn text class="text-capitalize" @click="setData">¿Ya tienes cuenta?, Inicia sesión</v-btn>
+    </div>
+    <div class="text-center mt-3 mb-12">
+      <v-btn rounded color="blue darken-4" dark>REGISTRARSE</v-btn>
+    </div>
   </v-card-text>
 </template>
 <script>
   export default {
-    name: 'Login'
+    name: 'SignUp',
+    data: () => ({
+      step: 1
+    }),
+    methods: {
+      setData() {
+        this.$emit("getStep", this.step);
+      }
+    }
   }
 </script>
